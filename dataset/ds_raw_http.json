@@ -1,21 +1,21 @@
 {
-	"name": "inputfiles",
+	"name": "ds_raw_http",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "HttpServer1",
 			"type": "LinkedServiceReference",
 			"parameters": {
 				"vls_baseurl": {
-					"value": "@dataset().vds_baseurl",
+					"value": "@dataset().vds_rawhttp_baseurl",
 					"type": "Expression"
 				}
 			}
 		},
 		"parameters": {
-			"vds_baseurl": {
+			"vds_rawhttp_baseurl": {
 				"type": "string"
 			},
-			"vds_relativeurl": {
+			"vds_rawhttp_relurl": {
 				"type": "string"
 			}
 		},
@@ -25,7 +25,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "@dataset().vds_relativeurl",
+					"value": "@dataset().vds_rawhttp_relurl",
 					"type": "Expression"
 				}
 			},
@@ -35,6 +35,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

@@ -18,7 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
@@ -27,7 +27,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "ds_blob_config",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -78,7 +78,7 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobStorageWriteSettings"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -98,15 +98,15 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "inputfiles",
+									"referenceName": "ds_raw_http",
 									"type": "DatasetReference",
 									"parameters": {
-										"vds_baseurl": {
-											"value": "@item().fBaseurl",
+										"vds_rawhttp_baseurl": {
+											"value": "@item().Baser",
 											"type": "Expression"
 										},
-										"vds_relativeurl": {
-											"value": "@item().frelativeurl",
+										"vds_rawhttp_relurl": {
+											"value": "@item().relativeurl",
 											"type": "Expression"
 										}
 									}
@@ -114,10 +114,10 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "dsoutput2",
+									"referenceName": "ds_raw_output",
 									"type": "DatasetReference",
 									"parameters": {
-										"vds_filename": {
+										"vds_raw_op_filename": {
 											"value": "@item().filename",
 											"type": "Expression"
 										}

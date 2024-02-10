@@ -1,17 +1,17 @@
 {
-	"name": "DelimitedText1",
+	"name": "ds_blob_config",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage1",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
+				"type": "AzureBlobStorageLocation",
 				"fileName": "configfiles.txt",
-				"fileSystem": "config"
+				"container": "config"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -20,11 +20,11 @@
 		},
 		"schema": [
 			{
-				"name": "fBaseurl",
+				"name": "Baser",
 				"type": "String"
 			},
 			{
-				"name": "frelativeurl",
+				"name": "relativeurl",
 				"type": "String"
 			},
 			{
@@ -32,6 +32,5 @@
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

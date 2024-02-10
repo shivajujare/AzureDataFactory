@@ -1,12 +1,12 @@
 {
-	"name": "dsoutput2",
+	"name": "ds_raw_output",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage1",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"vds_filename": {
+			"vds_raw_op_filename": {
 				"type": "string"
 			}
 		},
@@ -14,12 +14,12 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
+				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().vds_filename",
+					"value": "@dataset().vds_raw_op_filename",
 					"type": "Expression"
 				},
-				"fileSystem": "output2"
+				"container": "output2"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -27,6 +27,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
