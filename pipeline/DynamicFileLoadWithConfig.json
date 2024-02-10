@@ -27,7 +27,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "configfiles",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -114,10 +114,10 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "dsoutput2",
+									"referenceName": "output",
 									"type": "DatasetReference",
 									"parameters": {
-										"vds_filename": {
+										"vds_fname": {
 											"value": "@item().filename",
 											"type": "Expression"
 										}

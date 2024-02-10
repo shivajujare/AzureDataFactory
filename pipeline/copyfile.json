@@ -165,7 +165,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "configfiles",
 						"type": "DatasetReference"
 					}
 				]
