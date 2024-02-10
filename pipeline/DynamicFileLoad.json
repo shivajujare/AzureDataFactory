@@ -16,18 +16,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "inputfiles2",
-						"type": "DatasetReference",
-						"parameters": {
-							"vds_filename2": "*csv"
-						}
+						"referenceName": "ds_input_folder",
+						"type": "DatasetReference"
 					},
 					"fieldList": [
 						"childItems"
 					],
 					"storeSettings": {
-						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
+						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -70,7 +66,7 @@
 								"source": {
 									"type": "DelimitedTextSource",
 									"storeSettings": {
-										"type": "AzureBlobFSReadSettings",
+										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
@@ -81,7 +77,7 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobStorageWriteSettings"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -101,10 +97,10 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "inputfiles2",
+									"referenceName": "ds_input_file",
 									"type": "DatasetReference",
 									"parameters": {
-										"vds_filename2": {
+										"ds_infl_filename": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
@@ -113,10 +109,10 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output",
+									"referenceName": "ds_output",
 									"type": "DatasetReference",
 									"parameters": {
-										"vds_fname": {
+										"ds_op_filename": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
