@@ -18,17 +18,13 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
 						}
-					},
-					"dataset": {
-						"referenceName": "configfiles",
-						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
@@ -86,44 +82,8 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "inputfiles",
-									"type": "DatasetReference",
-									"parameters": {
-										"vds_baseurl": {
-											"value": "@item().fBaseurl",
-											"type": "Expression"
-										},
-										"vds_relativeurl": {
-											"value": "@item().frelativeurl",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "output",
-									"type": "DatasetReference",
-									"parameters": {
-										"vds_fname": {
-											"value": "@item().filename",
-											"type": "Expression"
-										}
-									}
-								}
-							]
+								"enableStaging": false
+							}
 						}
 					]
 				}
