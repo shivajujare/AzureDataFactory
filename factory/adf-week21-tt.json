@@ -1,0 +1,9 @@
+{
+	"name": "adf-week21-tt",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ebb2c71a-bf05-4863-8527-04b2ef8e4078",
+		"tenantId": "ba1b0bed-5b3e-4a44-8262-436ffcfc847d"
+	}
+}
